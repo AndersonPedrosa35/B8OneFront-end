@@ -5,9 +5,9 @@ const api = axios.create({
 });
 
 export const findAll = async () => api.get('/products')
-  .then((response) => response)
+  .then(({ data }) => data)
   .catch((err) => console.error(err));
 
 export const createProduct = async () => api.post('/products')
-  .then((response) => response)
+  .then(({ data }) => data)
   .catch((err) => console.error(err));
