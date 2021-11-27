@@ -3,23 +3,46 @@ import { createProduct } from '../service/api';
 
 export default function CreateProduct() {
   const [inputProduct, setInputProduct] = useState({});
+  
+  async function handleSubmitNewProduct(e) {
+    e.preventDefault();
+    const request = await createProduct(inputProduct);
+    console.log(request);
+  }
+
+  function handleChange({ target: { id, value } }) {
+    setInputProduct({ ...inputProduct, [id]: value });
+  }
+
   return (
-    <form>
+    <form onSubmit={ handleSubmitNewProduct } className="formProduct">
       <label htmlFor="title">
-        <input id="title" />
+        Título
+        <input id="title" onChange={ handleChange } />
+      </label>
+      <label htmlFor="file">
+        Arquivo
+        <input type="file" id="file" onChange={ handleChange } />
       </label>
       <label htmlFor="describe">
-        <input id="describe" />
+        Descrição
+        <input id="describe" onChange={ handleChange } />
       </label>
       <label htmlFor="category">
-        <input id="category" />
+        Categoria
+        <input id="category" onChange={ handleChange } />
       </label>
       <label htmlFor="price">
-        <input id="price" />
+        Preço
+        <input id="price" onChange={ handleChange } />
       </label>
       <label htmlFor="promotion">
-        <input id="promotion" />
+        Preço promocional
+        <input id="promotion" onChange={ handleChange } />
       </label>
+      <button type="submit">
+        Enviar
+      </button>
     </form>
   )
 }

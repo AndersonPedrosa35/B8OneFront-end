@@ -8,6 +8,6 @@ export const findAll = async () => api.get('/products')
   .then(({ data }) => data)
   .catch((err) => console.error(err));
 
-export const createProduct = async () => api.post('/products')
-  .then(({ data }) => data)
+export const createProduct = async (body) => api.post('/products', body)
+  .then(( data ) => data)
   .catch((err) => console.error(err));
