@@ -6,7 +6,9 @@ export default function Home() {
   return (
     <div className='App'>
       <Header />
-      <ListItems />
+      <section className='products'>
+        <ListItems />
+      </section>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { createProduct } from '../../service/api';
+import { createProduct } from '../../service/api';
 import check from '../../assets/check.svg';
 import './style.css';
 
@@ -13,10 +13,9 @@ export default function CreateProduct() {
   async function handleSubmitNewProduct(e) {
     e.preventDefault();
     setIsChecked(!isChecked);
-    // const request = await createProduct(inputProduct);
-    // console.log(request, 'POST PARA ENVIAR OS ITEMS PARA O BANCO');
+    await createProduct(inputProduct);
     setInputProduct([]);
-    // setTimeout(() => navigate('/'), 1000);
+    setTimeout(() => navigate('/'), 1000);
   }
 
   function handleChange({ target: { id, value } }) {

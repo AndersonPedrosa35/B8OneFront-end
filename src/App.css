@@ -17,6 +17,10 @@ body {
   min-height: 100vh;
 }
 
+.products {
+  display: flex;
+}
+
 button {
   align-self: center;
   color: #FFFFFF;
