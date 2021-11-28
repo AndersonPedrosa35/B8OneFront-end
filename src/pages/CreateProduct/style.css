@@ -1,0 +1,23 @@
+.formProduct {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0 0 28rem;
+  width: 20rem;
+}
+
+.formProduct h3 {
+  text-align: center;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+form input:not(#file) {
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 2px;
+  margin-top: 0.3rem;
+  padding: 0.25rem;
+}

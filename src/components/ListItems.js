@@ -17,6 +17,9 @@ export default function ListItems() {
         <li>{ describe }</li>
         <li>{ price }</li>
         <li>{ promotion }</li>
+        {/* <button onClick={}>
+        { isChecked ? (<img src={ check } alt='clicado' />, 'Adicionado') : 'Adicionar' }
+        </button> */}
       </div>
     ))
   )

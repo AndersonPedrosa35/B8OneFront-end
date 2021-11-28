@@ -1,10 +1,19 @@
+* {
+  font-family: "Inter";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #E5E5E5; 
+}
+
 .App {
   align-items: center;
-  background-color: #E5E5E5;
   display: flex;
   flex-direction: column;
   font-size: 2rem;
-  font-family:
   min-height: 100vh;
 }
 
@@ -22,4 +31,14 @@ button {
 
 button:hover {
   background-color: #1C6C3E;
+}
+
+.click {
+  background-color: #A3F9B9;
+  color: black;
+}
+
+.click img {
+  margin-left: 1px;
+  width: 1rem;
 }
