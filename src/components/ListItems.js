@@ -11,14 +11,14 @@ export default function ListItems() {
   }, []);
 
   return (
-    products && products.map(({ title, file, describe, price, promotion }) => (
-      <div>
+    products && products.map(({ title, file, price, promotion }) => (
+      <section className="card">
+        {console.log(file)}
         <img src={ file } alt={ `Ilustração da ${ title }` } />
-        <li>{ title }</li>
-        <li>{ describe }</li>
-        <li>{ price }</li>
-        <li>{ promotion }</li>
-      </div>
+        <li className="title">{ title }</li>
+        <li className="price">{ price }</li>
+        <li className="promotion">{ promotion }</li>
+      </section>
     ))
   )
 }
