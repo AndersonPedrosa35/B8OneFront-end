@@ -16,6 +16,7 @@ export default function CreateProduct() {
     const request = await createProduct(inputProduct);
     console.log(request, 'POST PARA ENVIAR OS ITEMS PARA O BANCO');
     setInputProduct([]);
+    
     setTimeout(() => navigate('/'), 1000);
   }
 
