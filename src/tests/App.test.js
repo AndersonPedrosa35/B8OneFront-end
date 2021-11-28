@@ -8,5 +8,4 @@ describe('Renders the App', () => {
     expect(linkElement).toBeInTheDocument();
   });
 
-  it('')
 })
