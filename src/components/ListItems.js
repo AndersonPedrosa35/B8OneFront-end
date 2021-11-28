@@ -11,8 +11,9 @@ export default function ListItems() {
   }, []);
 
   return (
-    products && products.map(({ title, image, describe, price, promotion }) => (
+    products && products.map(({ title, file, describe, price, promotion }) => (
       <div>
+        <img src={ file } alt={ `Ilustração da ${ title }` } />
         <li>{ title }</li>
         <li>{ describe }</li>
         <li>{ price }</li>
