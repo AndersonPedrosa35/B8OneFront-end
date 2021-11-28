@@ -12,7 +12,7 @@
   width: 12rem;
 }
 
-.card li {
+.card li, small {
   margin: 0 1rem 0.75rem;
   list-style: none;
 }
@@ -21,4 +21,8 @@
   color: #B5B5B6;
   font-size: 0.75rem;
   text-decoration: line-through;
+}
+
+.promotion {
+  
 }

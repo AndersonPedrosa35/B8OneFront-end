@@ -5,6 +5,11 @@ import './style.css';
 export default function ListItems() {
   const [products, setProducts] = useState([]);
 
+  function parcelPrice(promotion) {
+    const parcel = parseFloat(promotion / 10).toFixed(2);
+    return `10x de R$ ${parcel} `
+  }
+
   function formatPrices(price) {
     const index = price.length;
     if(index > 3) {
@@ -25,6 +30,7 @@ export default function ListItems() {
       .then(({ result }) => {
         result.forEach((item) => {
           item.price = formatPrices(item.price);
+          item.parcel = parcelPrice(item.promotion)
           item.promotion = formatPrices(item.promotion);
         })
         setProducts(result);
@@ -33,13 +39,14 @@ export default function ListItems() {
   }, []);
 
   return (
-    products && products.map(({ title, file, price, promotion }) => (
+    products && products.map(({ title, file, price, promotion, parcel }) => (
       <section className="card">
         {console.log(file)}
         <img src={ file } alt={ `Ilustração da ${ title }` } />
         <li className="title">{ title }</li>
         <li className="price">{ `R$ ${ price },00` }</li>
         <li className="promotion">{ `R$ ${promotion},00` }</li>
+        <small>em até <strong>{ parcel }</strong> sem juros</small>
       </section>
     ))
   )
