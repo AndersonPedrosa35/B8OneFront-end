@@ -1,6 +1,6 @@
-import React from 'react'
-import Header from '../components/Header'
-import ListItems from '../components/ListItems'
+import React from 'react';
+import Header from '../components/Header';
+import ListItems from '../components/ListItems/index';
 
 export default function Home() {
   return (
