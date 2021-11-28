@@ -24,8 +24,6 @@ export default function CreateProduct() {
   }
 
   function handleClickButton({ target }) {
-    const arrayState = Object.values(inputProduct);
-    arrayState.forEach((input) => console.log(input));
     if (isChecked) {
       const methodClass = target.classList;
       methodClass.contains('click') ? methodClass.remove('click') :
@@ -49,7 +47,6 @@ export default function CreateProduct() {
       <label htmlFor="file">
         Arquivo
         <input
-          type="file"
           id="file"
           value={ inputProduct['file'] }
           onChange={ handleChange }

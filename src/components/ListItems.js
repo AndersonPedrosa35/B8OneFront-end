@@ -11,15 +11,12 @@ export default function ListItems() {
   }, []);
 
   return (
-    products && products.map(({ title, describe, price, promotion }) => (
+    products && products.map(({ title, image, describe, price, promotion }) => (
       <div>
         <li>{ title }</li>
         <li>{ describe }</li>
         <li>{ price }</li>
         <li>{ promotion }</li>
-        {/* <button onClick={}>
-        { isChecked ? (<img src={ check } alt='clicado' />, 'Adicionado') : 'Adicionar' }
-        </button> */}
       </div>
     ))
   )
