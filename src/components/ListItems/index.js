@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { findAll } from '../../service/api';
+import check from '../../assets/check.svg';
 import './style.css';
 
 export default function ListItems() {
   const [products, setProducts] = useState([]);
+  const [isChecked, setIsChecked] = useState(false);
 
   function parcelPrice(promotion) {
     const parcel = parseFloat(promotion / 10).toFixed(2);
     return `10x de R$ ${parcel} `
+  }
+
+  function handleClickButton({ target }) {
+    setIsChecked(!isChecked);
+    const methodClass = target.classList;
+    methodClass.contains('click') ? methodClass.remove('click') :
+      methodClass.add('click');
   }
 
   function formatPrices(price) {
@@ -47,6 +56,16 @@ export default function ListItems() {
         <li className="price">{ `R$ ${ price },00` }</li>
         <li className="promotion">{ `R$ ${promotion},00` }</li>
         <small>em até <strong>{ parcel }</strong> sem juros</small>
+        <button className="button-item" onClick={ handleClickButton } >
+        { isChecked ? 
+      (
+        <> 
+          <img src={ check } alt='clicado' /> 
+          Adicionado
+        </>
+      ) 
+      : 'Adicionar' }
+        </button>
       </section>
     ))
   )

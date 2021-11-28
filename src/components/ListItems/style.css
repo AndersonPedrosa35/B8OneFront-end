@@ -19,10 +19,17 @@
 
 .price {
   color: #B5B5B6;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   text-decoration: line-through;
 }
 
 .promotion {
-  
+  color: #DA4B4F;
+  font-size: 2rem;
+}
+
+.button-item {
+  margin: 2rem;
+  padding: 1rem;
+  width: 13rem;
 }
