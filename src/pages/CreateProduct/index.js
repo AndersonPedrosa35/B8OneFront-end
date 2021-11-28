@@ -8,14 +8,15 @@ export default function CreateProduct() {
   const [inputProduct, setInputProduct] = useState({});
   const [isChecked, setIsChecked] = useState(false);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   
   async function handleSubmitNewProduct(e) {
     e.preventDefault();
     setIsChecked(!isChecked);
     const request = await createProduct(inputProduct);
+    console.log(request, 'POST PARA ENVIAR OS ITEMS PARA O BANCO');
     setInputProduct([]);
-    // setTimeout(() => navigate('/'), 1000);
+    setTimeout(() => navigate('/'), 1000);
   }
 
   function handleChange({ target: { id, value } }) {
