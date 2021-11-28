@@ -33,3 +33,9 @@
   padding: 1rem;
   width: 13rem;
 }
+
+.iconCore {
+  position: absolute;
+  margin-top: 2.25rem;
+  margin-left: 5rem;
+}

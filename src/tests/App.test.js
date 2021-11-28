@@ -7,4 +7,6 @@ describe('Renders the App', () => {
     const linkElement = screen.getByText(/Challenge B8One/i);
     expect(linkElement).toBeInTheDocument();
   });
+
+  it('')
 })
