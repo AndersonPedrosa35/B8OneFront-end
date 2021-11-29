@@ -1,6 +1,11 @@
+// import axios from 'axios';
 import { render, screen } from '@testing-library/react';
 import App from '../App';
+// import renderWithRoute from './renderWithRouter';
+// import mockValue from './mockValue.json';
+// import Home from '../pages/Home';
 
+// jest.mock('axios');
 describe('Renders title in App', () => {
   it('should renders title', () => {
     render(<App />);
@@ -10,11 +15,12 @@ describe('Renders title in App', () => {
 });
 
 // describe('Renders the cards from request', () => {
-//   beforeEach(() => {
-    
-//   })
-//   it('should renders the title of item', () => {
-//     render(<App />);
-//     const 
-//   })
+  // it('should renders the title of item', () => {
+  //   axios.get = (url) => Promise.resolve({
+  //     data: mockValue,
+  //   })
+  //   const { getByText } = renderWithRoute(<Home />);
+  //   const text = getByText('eerr');
+  //   expect(text).toBeInTheDocument();
+  // })
 // })
