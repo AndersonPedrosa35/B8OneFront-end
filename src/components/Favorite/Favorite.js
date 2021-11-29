@@ -3,7 +3,7 @@ import {
   coracaoActive, coracaoActiveHover, coracaoDefault, coracaoHover
 } from '../../assets/index';
 
-export default function Index() {
+export default function Favorite() {
   const [favoriteClick, setFavoriteClick] = useState(false);
   const [favoriteHover, setFavoriteHover] = useState(false);
 

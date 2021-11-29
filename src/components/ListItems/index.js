@@ -1,23 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { findAll } from '../../service/api';
-import { check } from '../../assets/index';
 import './style.css';
-import Index from '../Favorite/Index.js';
+import Favorite from '../Favorite/Favorite.js';
+import Button from '../Compra/Button';
 
 export default function ListItems() {
   const [products, setProducts] = useState([]);
-  const [isChecked, setIsChecked] = useState(false);
 
   function parcelPrice(promotion) {
     const parcel = parseFloat(promotion / 10).toFixed(2);
     return `10x de R$ ${parcel} `
-  }
-
-  function handleClickButton({ target }) {
-    setIsChecked(!isChecked);
-    const methodClass = target.classList;
-    methodClass.contains('click') ? methodClass.remove('click') :
-      methodClass.add('click');
   }
 
   function formatPrices(price) {
@@ -51,22 +43,13 @@ export default function ListItems() {
   return (
     products && products.map(({ title, file, price, promotion, parcel }) => (
       <section className="card">
-        <Index />
+        <Favorite />
         <img src={ file } alt={ `Ilustração da ${ title }` } />
         <li className="title">{ title }</li>
         <li className="price">{ `R$ ${ price },00` }</li>
         <li className="promotion">{ `R$ ${promotion},00` }</li>
         <small>em até <strong>{ parcel }</strong> sem juros</small>
-        <button className="button-item" onClick={ handleClickButton } >
-        { isChecked ? 
-      (
-        <> 
-          <img src={ check } alt='clicado' /> 
-          Adicionado
-        </>
-      ) 
-      : 'Adicionar' }
-        </button>
+        <Button />
       </section>
     ))
   )
